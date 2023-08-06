@@ -1,0 +1,12 @@
+The generated HDBlock output will be one of two options.
+
+1. A block diagram that shows the hierarchy of the VHDL blocks with no connections between any of the blocks. The block diagram will
+   be output as a .svg file that can then be loaded into other editors (Visio, draw.io) where the user can highlight the appropriate
+   connections or use the diagram as is.
+
+2. HDBlock will draw the connections. The type of connection drawn will follow the following rules:
+   a. The connections will only show if there is any type of interface between blocks (e.g. ports in and/or out).
+   b. Arrow heads will be used to demonstrate direction of ports in and/or out of any one block.
+   c. Color of the blocks will be used to denote the level that a given block exists at.
+   d. Connections cannot travel up/or down levels they must stay at the same level
+      (in order to go up/down the connection must connect to an edge of an block that encapsulates it).
