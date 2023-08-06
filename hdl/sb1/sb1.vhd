@@ -36,9 +36,11 @@ architecture RTL is
         );
       end SB1_1;
 
+    signal sb1_0_out, sb1_1_out;
+
     begin
 
-    O_P0 <= '0';
+    O_P0 <= sb1_0_out and sb1_1_out;
 
     U_SB1_0 : SB1_0
       port map(
@@ -47,7 +49,7 @@ architecture RTL is
         
         I_P0 => I_P0,
 
-        O_P0 => O_P0
+        O_P0 => sb1_0_out
       );
 
     U_SB1_1 : SB1_1
@@ -57,7 +59,7 @@ architecture RTL is
         
         I_P0 => I_P0,
 
-        O_P0 => O_P0
+        O_P0 => sb1_1_out
       );
 
 end RTL;

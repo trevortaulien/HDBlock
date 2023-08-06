@@ -36,28 +36,30 @@ architecture RTL is
           );
         end SB1_1;
   
+      signal sb0_0_out, sb0_1_out;
+
       begin
   
-      O_P0 <= '0';
+      O_P0 <= sb0_0_out and sb0_1_out;
   
-      U_SB1_0 : SB0_0
+      U_SB0_0 : SB0_0
         port map(
           I_CLK => I_CLK,
           I_RESET => I_RESET,
           
           I_P0 => I_P0,
   
-          O_P0 => O_P0
+          O_P0 => sb0_0_out
         );
   
-      U_SB1_1 : SB0_1
+      U_SB0_1 : SB0_1
         port map(
           I_CLK => I_CLK,
           I_RESET => I_RESET,
           
           I_P0 => I_P0,
   
-          O_P0 => O_P0
+          O_P0 => sb0_1_out
         );
 
 end RTL;
